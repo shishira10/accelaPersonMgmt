@@ -27,4 +27,9 @@ Sample data is as below
 ## API Details
 1. Postman collection - https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Accela.postman_collection.json
 	- Please export the collection as is to get pre configured API requests (For all address types and variations)
-2. URL details with sample request and response - 
+2. URL details with sample request and response - https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/API%20Doc
+
+## Additional points to note
+	- A generic response object with fields "status", "errorMessage" and "apiName" is used for all DML operations to provide a flexibility of error management at web layer. "errorMessage" can be configured easily in the code to throw pre defined errors or to generalise scenarios.
+	- For the purpose of storing multiple addresses for a person. There are 4 valid addressTypes i.e. shippingAddress, billingAddress, homeAddress, officeAddress. Addresses other than these types are not allowed and adding a new addressType will be a minor change.
+	
