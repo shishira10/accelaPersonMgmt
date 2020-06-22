@@ -24,13 +24,11 @@ public interface AddressRepository extends JpaRepository<Address, Integer> {
     @Modifying
     @Query("delete from Address where personId = :personId")
     void deleteByPersonId(@Param("personId") Integer personId);
-    // void deleteByPersonId(int personId);
 
 
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     @Modifying
-    @Query("delete from Address WHERE personId = :personId AND address_type= :address_type")
-    void deleteByPersonIdAndType(@Param("personId") Integer personId, @Param("address_type") String address_type);
-    // void deleteByPersonIdAndType(Integer personId, String address_type);
+    @Query("delete from Address WHERE personId = :personId AND addressType= :addressType")
+    void deleteByPersonIdAndType(@Param("personId") Integer personId, @Param("addressType") String address_type);
 }
