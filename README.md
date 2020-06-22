@@ -25,4 +25,6 @@ Sample data is as below
 	- mvn clean install -DskipTests=true spring-boot:run (To skip the test cases)
 
 ## API Details
-1. 
+1. Postman collection - https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Accela.postman_collection.json
+	- Please export the collection as is to get pre configured API requests (For all address types and variations)
+2. URL details with sample request and response - 
