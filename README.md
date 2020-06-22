@@ -7,16 +7,16 @@
   Table structure is as below
   
 ## **Person**
- <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png">
+ <img width="500" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png">
 
 ## **Address**
- <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Address.png">
+ <img width="500" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Address.png">
 
 
 The DB console can be accessed using the link - http://localhost:8443/h2-console (username=AccelaAdmin, password=pass123)
 
 Sample data is as below
- <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/PersonAndAddress.png">
+ <img width="1000" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/PersonAndAddress.png">
 
 ## Steps to run the code
 1. Download source code and Import into an IDE (Ex: Eclipse) and run it as Spring boot app
