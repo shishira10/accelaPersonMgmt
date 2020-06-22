@@ -1,0 +1,80 @@
+AddPerson 
+http://localhost:8443/api/v1/addPerson
+
+Request : 
+{"firstName":"Bon","lastName":"Jovi"}
+
+Sample Response : 
+{"status":"Success","errorMessage":"","apiName":"addPerson"}
+
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+EditPerson
+http://localhost:8443/api/v1/editPerson/{personId}
+
+Request : 
+{"firstName":"Kurt","lastName":"Cobain"}
+
+Sample Response : 
+{"status":"Success","errorMessage":"","apiName":"editPerson"}
+
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+DeletePerson
+http://localhost:8443/api/v1/deletePerson/{personId}
+
+{"status":"Success","errorMessage":"","apiName":"deletePerson"}
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+AddAddressToPerson (One among the predefined valid Types of addresses to be used - shippingAddress, billingAddress, homeAddress, officeAddress) 
+http://localhost:8443/api/v1/addAddress/{personId}
+
+Request : 
+{"state":"California","city":"Sunnyvale","postalCode":"95051","street":"2655 Street1","addressType":"billingAddress"}
+
+Sample Response : 
+{"status":"Success","errorMessage":"","apiName":"addAddress"}
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+EditAddress (Address update done only if the addressType matches with existing data in DB)
+http://localhost:8443/api/v1/editAddress/{personId}
+
+Request:
+{"state":"California","city":"Sunnyvale","postalCode":"95051","street":"2655 Street1","addressType":"shippingAddress"}
+
+Sample Response : 
+{"status":"Success","errorMessage":"","apiName":"editAddress"}
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+DeleteAddress (Two kinds of delete supported)
+1) Delete all addresses for a personId - http://localhost:8443/api/v1/deleteAddress/{personId}
+2) Delete specific address using a combination of addressType and personId - http://localhost:8443/api/v1/deleteAddress/{personId}?addressType=officeAddress
+
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+CountNumberofPersons
+http://localhost:8443/api/v1/numberOfPersons
+
+Sample Response:
+4
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+fetchAllPersons
+http://localhost:8443/api/v1/fetchAllPersons
+
+Sample Response:
+[{"firstName":"Bon","lastName":"aa","createdAt":"2020-06-22T07:36:42.369+00:00","modifedAt":null,"id":5},{"firstName":"Bon","lastName":"Jovi","createdAt":"2020-06-22T07:44:52.284+00:00","modifedAt":null,"id":7}]
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+fetchAllData (Additional API implemented to fetch all details about all persons and their correspondng addresses)
+http://localhost:8443/api/v1/fetchAllData
+
+Sample Response:
+[{"person":{"firstName":"Bon","lastName":"aa","createdAt":"2020-06-22T07:36:42.369+00:00","modifedAt":null,"id":5},"addressInfo":[{"personId":5,"addressType":"billingAddress","street":"2655 Street1","city":"Sunnyvale","state":"California","postalCode":"95051","createdAt":"2020-06-22T07:37:00.576+00:00","modifedAt":null,"id":6}]},{"person":{"firstName":"Bon","lastName":"Jovi","createdAt":"2020-06-22T07:44:52.284+00:00","modifedAt":null,"id":7},"addressInfo":[{"personId":7,"addressType":"homeAddress","street":"2655 Street1","city":"Sunnyvale","state":"California","postalCode":"95051","createdAt":"2020-06-22T07:46:05.140+00:00","modifedAt":null,"id":8}]}]
