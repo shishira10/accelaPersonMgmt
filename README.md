@@ -34,4 +34,5 @@ Sample data is as below
 ## Additional points to note
 	- A generic response object with fields "status", "errorMessage" and "apiName" is used for all DML operations to provide a flexibility of error management at web layer. "errorMessage" can be configured easily in the code to throw pre defined errors or to generalise scenarios.
 	- For the purpose of storing multiple addresses for a person. There are 4 valid addressTypes i.e. shippingAddress, billingAddress, homeAddress, officeAddress. Addresses other than these types are not allowed and adding a new addressType will be a minor change.
+	- Please use the APIs /api/v1/fetchAllData and /api/v1/fetchAllPersons to see details about Personal data added/modified via other APIs.
 	
