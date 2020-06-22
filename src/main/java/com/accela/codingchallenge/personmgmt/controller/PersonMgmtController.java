@@ -5,11 +5,8 @@ package com.accela.codingchallenge.personmgmt.controller;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.accela.codingchallenge.personmgmt.ApplicationConstants;
 import com.accela.codingchallenge.personmgmt.address.service.AddressService;
-import com.accela.codingchallenge.personmgmt.dao.AddressRepository;
-import com.accela.codingchallenge.personmgmt.dao.PersonRepository;
 import com.accela.codingchallenge.personmgmt.entitites.Address;
 import com.accela.codingchallenge.personmgmt.entitites.ApiResponse;
 import com.accela.codingchallenge.personmgmt.entitites.Person;
@@ -38,12 +33,6 @@ import reactor.core.publisher.Mono;
 @RequestMapping(ApplicationConstants.ROOT_PATH)
 public class PersonMgmtController {
 
-    @Inject
-    PersonRepository personRepository;
-
-    @Inject
-    AddressRepository addressRepository;
-
     private final PersonService personService;
     private final AddressService addressService;
 
@@ -55,7 +44,7 @@ public class PersonMgmtController {
     @PutMapping("/addPerson")
     public Mono<ResponseEntity<ApiResponse>> addPerson(@RequestBody final Person personData) {
 
-        ApiResponse response = personService.addPersonData(personData);
+        ApiResponse response = personService.createPerson(personData);
         return Mono.just(ResponseEntity.status(response.getApiStatus()).body(response));
 
     }
@@ -78,7 +67,7 @@ public class PersonMgmtController {
 
     @PutMapping("/addAddress/{personId}")
     public Mono<ResponseEntity<ApiResponse>> createPersonAddress(@PathVariable("personId") final Integer personId, @RequestBody final Address address) {
-        ApiResponse response = addressService.addAddress(personId, address);
+        ApiResponse response = addressService.createAddress(personId, address);
         return Mono.just(ResponseEntity.status(response.getApiStatus()).body(response));
     }
 

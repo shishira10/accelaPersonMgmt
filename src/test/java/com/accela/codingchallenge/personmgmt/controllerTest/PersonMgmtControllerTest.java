@@ -83,7 +83,7 @@ public class PersonMgmtControllerTest {
         List<Person> allPersons = createPersons();
 
         ApiResponse successResponse = ApiResponse.builder().status("Success").errorMessage(ApplicationConstants.EMPTY_STRING).apiStatus(HttpStatus.OK).build();
-        Mockito.lenient().when(personService.addPersonData(Mockito.any())).thenReturn(successResponse);
+        Mockito.lenient().when(personService.createPerson(Mockito.any())).thenReturn(successResponse);
 
         allPersons.stream().forEach(personData -> {
             final Mono<ResponseEntity<ApiResponse>> response = personController.addPerson(personData);
@@ -101,7 +101,7 @@ public class PersonMgmtControllerTest {
                     .apiStatus(HttpStatus.OK).build();
 
         allPersons.stream().forEach(mockData -> {
-            Mockito.lenient().when(personService.addPersonData(mockData)).thenReturn(duplicateDataResponse);
+            Mockito.lenient().when(personService.createPerson(mockData)).thenReturn(duplicateDataResponse);
         });
 
 
@@ -168,8 +168,8 @@ public class PersonMgmtControllerTest {
         
         Address address1 = Address.builder().street("123 Blvd").city("Detroit").addressType("shippingAddress").postalCode("864982").personId(1000).build();
         
-        Mockito.lenient().when(addressService.addAddress(1000, address1)).thenReturn(successResponse);
-        Mockito.lenient().when(addressService.addAddress(2000, address1)).thenReturn(errorResponse);
+        Mockito.lenient().when(addressService.createAddress(1000, address1)).thenReturn(successResponse);
+        Mockito.lenient().when(addressService.createAddress(2000, address1)).thenReturn(errorResponse);
         
         Mono<ResponseEntity<ApiResponse>> editPersonResponse1 = personController.createPersonAddress(1000, address1);
         Mono<ResponseEntity<ApiResponse>> editPersonResponse2 = personController.createPersonAddress(2000, address1);

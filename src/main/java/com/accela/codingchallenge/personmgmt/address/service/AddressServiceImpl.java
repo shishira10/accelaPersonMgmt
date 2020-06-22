@@ -29,7 +29,7 @@ public class AddressServiceImpl implements AddressService {
     AddressRepository addressRepository;
 
     @Override
-    public ApiResponse addAddress(final Integer personId, final Address addressData) {
+    public ApiResponse createAddress(final Integer personId, final Address addressData) {
         if (personRepository.findById(personId).isPresent()) {
 
             if (ApplicationConstants.VALID_ADDRESS_TYPES.contains(addressData.getAddressType())) {

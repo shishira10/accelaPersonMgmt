@@ -18,9 +18,28 @@ public interface PersonService {
 
     public Long getCount();
 
-    public ApiResponse addPersonData(Person personData);
+    /**
+     * Creates a new person.
+     * 
+     * @param The information of the person to be created.
+     * @return Success or Failure.
+     */
+    public ApiResponse createPerson(Person personData);
 
+    /**
+     * Deletes a person.
+     * 
+     * @param personId The id of the deleted person.
+     * @return Success or Failure.
+     */
     public ApiResponse deletePerson(Integer personId);
 
+    /**
+     * Updates the information of a person.
+     * 
+     * @param updated The information of the updated person.
+     * @return Success or Failure.
+     * @implNote Error thrown is person not found
+     */
     public ApiResponse updatePerson(Person personData, Integer personId);
 }

@@ -65,7 +65,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public ApiResponse addPersonData(final Person personData) {
+    public ApiResponse createPerson(final Person personData) {
         List<Person> allPersons = (List<Person>)personRepository.findAll();
 
         if (allPersons.stream().filter(DBEntity -> DBEntity.getFirstName().equalsIgnoreCase(personData.getFirstName()) &&
@@ -116,6 +116,9 @@ public class PersonServiceImpl implements PersonService {
     public ApiResponse updatePerson(final Person personData, final Integer personId) {
         try {
             if (personRepository.findById(personId).isPresent()) {
+                Person currentPerson = personRepository.findById(personId).get();
+                
+                personData.setCreatedAt(currentPerson.getCreatedAt());
                 personData.setModifedAt(new java.util.Date(System.currentTimeMillis()));
                 personData.setId(personId);
                 personRepository.save(personData);
