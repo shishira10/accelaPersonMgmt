@@ -4,4 +4,4 @@
   All the data are stored in an In-memory SQL DB(H2 DB). Two tables are used to implement the requirements (Filename - requirements.pdf),those are "Person" and "Address"
   
   Table structre is as below
- <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png 19">
+ <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png">
