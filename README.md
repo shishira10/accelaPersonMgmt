@@ -1,14 +1,15 @@
 ## PersonManagement
-	PersonManagement is a SpringBoot application which has APIs for given requirements that can be invoked through a REST client such as Postman.
-  
-  All the data are stored in an In-memory SQL DB(H2 DB). Two tables are used to implement the requirements are "Person" and "Address"(https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Requirements.pdf)
+	PersonManagement is a Spring WebFlux project to manage persons and their addresses. 
+	Detailed requirements can be found at https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Requirements.pdf
+	
+  All the data related to person and their corresponding addresses will stored in an In-memory SQL DB(H2 DB). Two tables are used to implement the requirements and they are "Person" and "Address".
   
   Table structure is as below
   
- **Person**
+## **Person**
  <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png">
 
-**Address**
+## **Address**
  <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Address.png">
 
 
@@ -27,4 +28,9 @@ Sample data is as below
 ## API Details
 1. Postman collection - https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Accela.postman_collection.json
 	- Please export the collection as is to get pre configured API requests (For all address types and variations)
-2. URL details with sample request and response - 
+2. URL details with sample request and response - https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/API%20Doc
+
+## Additional points to note
+	- A generic response object with fields "status", "errorMessage" and "apiName" is used for all DML operations to provide a flexibility of error management at web layer. "errorMessage" can be configured easily in the code to throw pre defined errors or to generalise scenarios.
+	- For the purpose of storing multiple addresses for a person. There are 4 valid addressTypes i.e. shippingAddress, billingAddress, homeAddress, officeAddress. Addresses other than these types are not allowed and adding a new addressType will be a minor change.
+	
