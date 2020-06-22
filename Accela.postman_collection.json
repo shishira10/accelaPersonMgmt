@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Bon\",\n    \"lastName\": \"Jovi\"\n}",
+					"raw": "{\n    \"firstName\": \"Fleetwood\",\n    \"lastName\": \"Mac\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,7 +123,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8443/api/v1/editPerson/3",
+					"raw": "http://localhost:8443/api/v1/editPerson/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,7 @@
 						"api",
 						"v1",
 						"editPerson",
-						"3"
+						"1"
 					]
 				}
 			},
@@ -146,7 +146,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"billingAddress\"\n}",
+					"raw": "{\n    \"state\" : \"New York\",\n    \"city\" : \"Brooklyn\",\n    \"postalCode\" : \"35413\",\n    \"street\" : \"100 st louis\",\n    \"addressType\" : \"billingAddress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -154,7 +154,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"raw": "http://localhost:8443/api/v1/addAddress/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -164,7 +164,7 @@
 						"api",
 						"v1",
 						"addAddress",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -177,7 +177,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"officeAddress\"\n}",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Fremont\",\n    \"postalCode\" : \"94085\",\n    \"street\" : \"Mission Blvd\",\n    \"addressType\" : \"officeAddress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -185,7 +185,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"raw": "http://localhost:8443/api/v1/addAddress/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -195,7 +195,7 @@
 						"api",
 						"v1",
 						"addAddress",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -208,7 +208,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"shippingAddress\"\n}",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Fremont\",\n    \"postalCode\" : \"94085\",\n    \"street\" : \"Mission Blvd\",\n    \"addressType\" : \"shippingAddress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -239,7 +239,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"homeAddress\"\n}",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"93411\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"homeAddress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -270,7 +270,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"San Jose\",\n    \"postalCode\" : \"95129\",\n    \"street\" : \"1491 Street3\",\n    \"addressType\" : \"shippingAddress\"\n}",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"San Jose\",\n    \"postalCode\" : \"95129\",\n    \"street\" : \"1491 Street3\",\n    \"addressType\" : \"billingAddress\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
