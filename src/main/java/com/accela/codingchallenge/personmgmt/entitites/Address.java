@@ -10,10 +10,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Address")
 public class Address {
@@ -23,7 +31,7 @@ public class Address {
      private Integer Id;
      private int personId;
     
-    private String address_type;
+    private String addressType;
     private String street;
     private String city;
     private String state;

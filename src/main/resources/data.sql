@@ -14,7 +14,7 @@ CREATE TABLE Address (
   Id INT AUTO_INCREMENT PRIMARY KEY,
   personId INT,
   FOREIGN KEY(personId) REFERENCES Person(Id),
-  address_type VARCHAR(250) NOT NULL,
+  addressType VARCHAR(250) NOT NULL,
   street VARCHAR(250),
   city VARCHAR(250),
   state VARCHAR(250),

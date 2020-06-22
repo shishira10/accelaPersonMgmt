@@ -23,8 +23,10 @@ public interface ApplicationConstants {
 	 */
 	String DUPLICATE_ENTRY_DB = "Duplicate data found in DB";
 	String DATABASE_INSERT_ERROR = "Error while inserting record";
+	String DATABASE_OPERATION_ERROR = "Error during DB operations";
 	String INVALID_RECORD = "Record not found - Invalid data for Edit/Delete";
 	String INVALID_ADDRESS = "Invalid Address Data";
+	String INVALID_ADDRESS_TYPE = "AddressType mismatch";
 
 	/*
 	 * Operations
