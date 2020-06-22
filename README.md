@@ -1,14 +1,15 @@
 ## PersonManagement
-	PersonManagement is a SpringBoot application which has APIs for given requirements that can be invoked through a REST client such as Postman.
-  
-  All the data are stored in an In-memory SQL DB(H2 DB). Two tables are used to implement the requirements are "Person" and "Address"(https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Requirements.pdf)
+	PersonManagement is a Spring WebFlux project to manage persons and their addresses. 
+	Detailed requirements can be found at https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Requirements.pdf
+	
+  All the data related to person and their corresponding addresses will stored in an In-memory SQL DB(H2 DB). Two tables are used to implement the requirements and they are "Person" and "Address".
   
   Table structure is as below
   
- **Person**
+## **Person**
  <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Person.png">
 
-**Address**
+## **Address**
  <img width="964" src="https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Images/Address.png">
 
 
