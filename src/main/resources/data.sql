@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS Person;
+ 
+CREATE TABLE Person (
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  firstName VARCHAR(250) NOT NULL,
+  lastName VARCHAR(250) NOT NULL,
+  createdAt TIMESTAMP,
+  modifedAt TIMESTAMP
+);
+
+DROP TABLE IF EXISTS Address;
+ 
+CREATE TABLE Address (
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  personId INT,
+  FOREIGN KEY(personId) REFERENCES Person(Id),
+  address_type VARCHAR(250) NOT NULL,
+  street VARCHAR(250),
+  city VARCHAR(250),
+  state VARCHAR(250),
+  postalCode VARCHAR(250),
+  createdAt TIMESTAMP,
+  modifedAt TIMESTAMP
+);
