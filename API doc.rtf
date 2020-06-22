@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-BoldOblique;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red42\green0\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c16471\c0\c100000;}
+\margl1440\margr1440\vieww33400\viewh18620\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 AddPerson \
+http://localhost:8443/api/v1/addPerson\
+\
+
+\f1\b0\fs26 Request : \
+\{"firstName":"Bon","lastName":"Jovi"\}\
+\
+Sample Response : \
+\{"status":"Success","errorMessage":"","apiName":"addPerson"\}\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f0\b\fs30 \
+
+\fs32 EditPerson\
+http://localhost:8443/api/v1/editPerson/\{personId\}
+\f1\b0\fs26 \
+\
+Request : \
+\{"firstName":"Kurt","lastName":"Cobain"\}\
+\
+Sample Response : \
+\{"status":"Success","errorMessage":"","apiName":"editPerson"\}\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f0\b\fs32 \
+DeletePerson\
+http://localhost:8443/api/v1/deletePerson/\{personId\}
+\f1\b0\fs26 \
+\
+\{"status":"Success","errorMessage":"","apiName":"deletePerson"\}\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\f0\b\fs32 AddAddressToPerson (One among the predefined valid Types of addresses to be used -
+\f2\i  
+\f3\i0 \cf2 shippingAddress, billingAddress, homeAddress, officeAddress
+\f0 \cf0 ) \
+http://localhost:8443/api/v1/addAddress/\{personId\}
+\f1\b0\fs26 \
+\
+Request : \
+\{"state":"California","city":"Sunnyvale","postalCode":"95051","street":"2655 Street1","addressType":"billingAddress"\}\
+\
+Sample Response : \
+\{"status":"Success","errorMessage":"","apiName":"addAddress"\}\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\f0\b\fs32 EditAddress (Address update done only if the addressType matches with existing data in DB)\
+http://localhost:8443/api/v1/editAddress/\{personId\}\
+
+\f1\b0\fs26 \
+Request:\
+\{"state":"California","city":"Sunnyvale","postalCode":"95051","street":"2655 Street1","addressType":"shippingAddress"\}\
+\
+Sample Response : \
+\{"status":"Success","errorMessage":"","apiName":"editAddress"\}\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\f0\b\fs32 DeleteAddress (Two kinds of delete supported)\
+1) Delete all addresses for a personId - http://localhost:8443/api/v1/deleteAddress/\{personId\}\
+2) Delete specific address using a combination of addressType and personId - http://localhost:8443/api/v1/deleteAddress/\{personId\}?addressType=officeAddress\
+\
+\
+
+\f1\b0\fs26 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f0\b\fs32 \
+CountNumberofPersons\
+http://localhost:8443/api/v1/numberOfPersons\
+
+\f1\b0\fs26 \
+Sample Response:\
+4\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f0\b\fs32 \
+fetchAllPersons\
+http://localhost:8443/api/v1/fetchAllPersons\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf0 Sample Response:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs26 \cf0 [\{"firstName":"Bon","lastName":"aa","createdAt":"2020-06-22T07:36:42.369+00:00","modifedAt":null,"id":5\},\{"firstName":"Bon","lastName":"Jovi","createdAt":"2020-06-22T07:44:52.284+00:00","modifedAt":null,"id":7\}]\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\f0\b\fs32 fetchAllData (Additional API implemented to fetch all details about all persons and their correspondng addresses)\
+http://localhost:8443/api/v1/fetchAllData
+\f1\b0\fs26 \
+\
+Sample Response:\
+[\{"person":\{"firstName":"Bon","lastName":"aa","createdAt":"2020-06-22T07:36:42.369+00:00","modifedAt":null,"id":5\},"addressInfo":[\{"personId":5,"addressType":"billingAddress","street":"2655 Street1","city":"Sunnyvale","state":"California","postalCode":"95051","createdAt":"2020-06-22T07:37:00.576+00:00","modifedAt":null,"id":6\}]\},\{"person":\{"firstName":"Bon","lastName":"Jovi","createdAt":"2020-06-22T07:44:52.284+00:00","modifedAt":null,"id":7\},"addressInfo":[\{"personId":7,"addressType":"homeAddress","street":"2655 Street1","city":"Sunnyvale","state":"California","postalCode":"95051","createdAt":"2020-06-22T07:46:05.140+00:00","modifedAt":null,"id":8\}]\}]}

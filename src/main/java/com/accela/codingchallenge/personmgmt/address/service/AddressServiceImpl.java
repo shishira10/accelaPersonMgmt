@@ -30,27 +30,23 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public ApiResponse addAddress(final Integer personId, final Address addressData) {
-        ApiResponse response = new ApiResponse();
-
         if (personRepository.findById(personId).isPresent()) {
 
             if (ApplicationConstants.VALID_ADDRESS_TYPES.contains(addressData.getAddressType())) {
                 addressData.setPersonId(personId);
                 addressData.setCreatedAt(new java.util.Date(System.currentTimeMillis()));
                 addressRepository.save(addressData);
-                response = Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.ADD_ADDRESS,
-                            HttpStatus.OK);
+                return Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.ADD_ADDRESS, HttpStatus.OK);
             }
             else {
-                response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_ADDRESS, ApplicationConstants.ADD_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INCORRECT_ADDRESSTYPE, ApplicationConstants.ADD_ADDRESS,
                             HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
         else {
-            response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.ADD_ADDRESS,
+            return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.ADD_ADDRESS,
                         HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return response;
     }
 
     @Override
@@ -58,7 +54,11 @@ public class AddressServiceImpl implements AddressService {
         ApiResponse response = new ApiResponse();
 
         try {
-            if (personRepository.findById(personId).isPresent() && ApplicationConstants.VALID_ADDRESS_TYPES.contains(addressData.getAddressType())) {
+            if (!ApplicationConstants.VALID_ADDRESS_TYPES.contains(addressData.getAddressType()))
+                return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INCORRECT_ADDRESSTYPE, ApplicationConstants.ADD_ADDRESS,
+                            HttpStatus.INTERNAL_SERVER_ERROR);
+
+            if (personRepository.findById(personId).isPresent()) {
                 Optional<List<Address>> currentAddress = addressRepository.findByPersonId(personId);
 
                 if (currentAddress.isPresent()) {
@@ -70,22 +70,22 @@ public class AddressServiceImpl implements AddressService {
                         addressData.setPersonId(personId);
                         addressData.setModifedAt(new java.util.Date(System.currentTimeMillis()));
                         addressRepository.save(addressData);
-                        response = Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.EDIT_ADDRESS,
+                        return Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.EDIT_ADDRESS,
                                     HttpStatus.OK);
                     }
                     else {
-                        response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_ADDRESS_TYPE,
+                        return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_ADDRESS_TYPE,
                                     ApplicationConstants.EDIT_ADDRESS, HttpStatus.OK);
                     }
                 }
             }
             else {
-                response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.EDIT_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.EDIT_ADDRESS,
                             HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
         catch (Exception e) {
-            response = Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.EDIT_ADDRESS, HttpStatus.INTERNAL_SERVER_ERROR);
+            return Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.EDIT_ADDRESS, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         return response;
@@ -93,44 +93,40 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public ApiResponse deleteAllAddress(Integer personId) {
-        ApiResponse response = new ApiResponse();
         if (personRepository.findById(personId).isPresent()) {
             try {
                 addressRepository.deleteByPersonId(personId);
-                response = Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.DELETE_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.DELETE_ADDRESS,
                             HttpStatus.OK);
             }
             catch (Exception e) {
-                response = Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.DELETE_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.DELETE_ADDRESS,
                             HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
         else {
-            response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.DELETE_ADDRESS,
+            return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.DELETE_ADDRESS,
                         HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return response;
     }
 
     @Override
     public ApiResponse deleteAddressByType(Integer personId, String addressType) {
-        ApiResponse response = new ApiResponse();
         if (personRepository.findById(personId).isPresent()) {
             try {
                 addressRepository.deleteByPersonIdAndType(personId, addressType);
-                response = Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.DELETE_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.SUCCESS, ApplicationConstants.EMPTY_STRING, ApplicationConstants.DELETE_ADDRESS,
                             HttpStatus.OK);
             }
             catch (Exception e) {
-                response = Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.DELETE_ADDRESS,
+                return Utility.setApiResponse(ApplicationConstants.ERROR, e.getMessage(), ApplicationConstants.DELETE_ADDRESS,
                             HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
         else {
-            response = Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.DELETE_ADDRESS,
+            return Utility.setApiResponse(ApplicationConstants.FAILURE, ApplicationConstants.INVALID_RECORD, ApplicationConstants.DELETE_ADDRESS,
                         HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return response;
     }
 
 }
