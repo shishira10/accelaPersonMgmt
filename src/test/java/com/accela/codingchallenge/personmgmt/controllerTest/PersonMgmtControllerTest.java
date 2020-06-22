@@ -207,6 +207,26 @@ public class PersonMgmtControllerTest {
     }
     
     @Test
+    public void testDeleteAddress() {
+        ApiResponse successResponse = ApiResponse.builder().status(ApplicationConstants.SUCCESS).errorMessage(ApplicationConstants.EMPTY_STRING)
+                    .apiStatus(HttpStatus.OK).build();
+        ApiResponse errorResponse = ApiResponse.builder().status(ApplicationConstants.FAILURE).errorMessage(ApplicationConstants.INVALID_RECORD)
+                    .apiStatus(HttpStatus.INTERNAL_SERVER_ERROR).build();
+
+        Mockito.lenient().when(addressService.deleteAllAddress(1000)).thenReturn(successResponse);
+        Mockito.lenient().when(addressService.deleteAllAddress(2000)).thenReturn(errorResponse);
+
+        Mono<ResponseEntity<ApiResponse>> editPersonResponse1 = personController.removePersonAddress(1000,"");
+        Mono<ResponseEntity<ApiResponse>> editPersonResponse2 = personController.removePersonAddress(2000,"");
+
+        assertNotEquals(editPersonResponse1.block().getStatusCode(), editPersonResponse2.block().getStatusCode());
+        assertNotEquals(editPersonResponse1.block().getBody(), editPersonResponse2.block().getBody());
+
+        assertEquals(successResponse, editPersonResponse1.block().getBody());
+        assertEquals(errorResponse, editPersonResponse2.block().getBody());
+    }
+    
+    @Test
     public void testNumberOfPersons() {
         List<Person> allPersons = createPersons();
 

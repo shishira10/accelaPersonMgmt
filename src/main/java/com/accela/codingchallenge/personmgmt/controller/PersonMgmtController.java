@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -29,6 +30,7 @@ import com.accela.codingchallenge.personmgmt.entitites.Person;
 import com.accela.codingchallenge.personmgmt.entitites.PersonData;
 import com.accela.codingchallenge.personmgmt.person.service.PersonService;
 
+import io.netty.util.internal.StringUtil;
 import reactor.core.publisher.Mono;
 
 
@@ -88,11 +90,11 @@ public class PersonMgmtController {
     }
 
     @DeleteMapping("/deleteAddress/{personId}")
-    public Mono<ResponseEntity<ApiResponse>> removePerson(@PathVariable("personId") final Integer personId,
+    public Mono<ResponseEntity<ApiResponse>> removePersonAddress(@PathVariable("personId") final Integer personId,
                 @RequestParam(value = "addressType", required = false) String addressType) {
         ApiResponse response = new ApiResponse();
 
-        if (addressType != null)
+        if (addressType != null && !StringUtil.isNullOrEmpty(addressType))
             response = addressService.deleteAddressByType(personId, addressType);
         else
             response = addressService.deleteAllAddress(personId);
