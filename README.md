@@ -1,5 +1,5 @@
 ## PersonManagement
-	PersonManagement is a Spring WebFlux project to manage persons and their addresses. 
+	PersonManagement is a Spring WebFlux project to manage personal data such as first name, last name and their addresses. 
 	Detailed requirements can be found at https://github.com/shishira10/accelaPersonMgmt/blob/CodingExercise/Requirements.pdf
 	Current active branch and the branch to be used is - "CodingExercise"
 	
