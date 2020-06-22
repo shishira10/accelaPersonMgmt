@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "67dd921d-0a45-421b-aa7a-3c6a334f8a97",
+		"name": "Accela",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FetchAllPersons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/fetchAllPersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"fetchAllPersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPerson",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Bon\",\n    \"lastName\": \"Jovi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addPerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addPerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPerson2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Bon\",\n    \"lastName\" : \"Jovi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addPerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addPerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePerson",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/deletePerson/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"deletePerson",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editPerson",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Dave\",\n    \"lastName\" : \"Grohl\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/editPerson/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"editPerson",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress - billingAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"billingAddress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addAddress",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress - officeAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"officeAddress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addAddress",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress - shippingAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"shippingAddress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addAddress",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress - homeAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"Sunnyvale\",\n    \"postalCode\" : \"95051\",\n    \"street\" : \"2655 Street1\",\n    \"addressType\" : \"homeAddress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/addAddress/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"addAddress",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editAddress",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\" : \"California\",\n    \"city\" : \"San Jose\",\n    \"postalCode\" : \"95129\",\n    \"street\" : \"1491 Street3\",\n    \"addressType\" : \"shippingAddress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/v1/editAddress/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"editAddress",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAddress(addressType=billingAddress)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/deleteAddress/1?addressType=officeAddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"deleteAddress",
+						"1"
+					],
+					"query": [
+						{
+							"key": "addressType",
+							"value": "officeAddress"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAddress(addressType=billingAddress) Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/deleteAddress/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"deleteAddress",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAllData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/fetchAllData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"fetchAllData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "numberOfPersons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/v1/numberOfPersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"v1",
+						"numberOfPersons"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
